@@ -24,6 +24,7 @@ class MyForm(QtGui.QMainWindow):
         ORM_Module.session.commit()
 
 
+
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     myapp = MyForm()
