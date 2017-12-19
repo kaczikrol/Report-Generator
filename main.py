@@ -1,5 +1,6 @@
 from PyQt4 import QtCore, QtGui
 from Design import Ui_MainWindow
+import MessageApp
 import sys
 import ORM_Module
 
@@ -17,9 +18,12 @@ class MyForm(QtGui.QMainWindow):
         self.expensevalue=float(self.ui.ValueEdit.text())
         self.tagdescription=str(self.ui.TagEdit.toPlainText())
         self.dateopertaion=self.ui.CalendarWidget.selectedDate().toString("yyyy-MM-dd")
+        print(self.messageBox().confirmed)
         self.expense=ORM_Module.Operation(self.dateopertaion,'C',self.expensevalue,self.tagdescription)
         ORM_Module.session.add(self.expense)
         ORM_Module.session.commit()
+
+
 
     def addIncome(self):
         self.incomevalue=float(self.ui.ValueEdit.text())
@@ -28,6 +32,10 @@ class MyForm(QtGui.QMainWindow):
         self.income=ORM_Module.Operation(self.dateopertaion,'D',self.incomevalue,self.tagdescription)
         ORM_Module.session.add(self.income)
         ORM_Module.session.commit()
+
+    def messageBox(self):
+        self.msg=MessageApp.MessageBox(self)
+        self.msg.show()
 
 
 

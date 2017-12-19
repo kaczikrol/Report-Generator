@@ -8,6 +8,7 @@
 
 from PyQt4 import QtCore, QtGui
 
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -87,4 +88,5 @@ class Ui_MainWindow(object):
         self.TagDescriptionLabel.setText(_translate("MainWindow", "Insert your #tag description", None))
         self.ValueLabel.setText(_translate("MainWindow", "Insert your value", None))
         self.CalendarLabel.setText(_translate("MainWindow", "Choose date of operation", None))
+
 
