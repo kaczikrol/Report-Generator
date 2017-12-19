@@ -14,12 +14,18 @@ class MyForm(QtGui.QMainWindow):
 
 
     def addExpense(self):
-        self.expense=ORM_Module.Operation('2017-12-12','C',124.12)
+        self.expensevalue=float(self.ui.ValueEdit.text())
+        self.tagdescription=str(self.ui.TagEdit.toPlainText())
+        self.dateopertaion=self.ui.CalendarWidget.selectedDate().toString("yyyy-MM-dd")
+        self.expense=ORM_Module.Operation(self.dateopertaion,'C',self.expensevalue,self.tagdescription)
         ORM_Module.session.add(self.expense)
         ORM_Module.session.commit()
 
     def addIncome(self):
-        self.income=ORM_Module.Operation('2017-12-12','D',112.23)
+        self.incomevalue=float(self.ui.ValueEdit.text())
+        self.tagdescription=str(self.ui.TagEdit.toPlainText())
+        self.dateopertaion=self.ui.CalendarWidget.selectedDate().toString("yyyy-MM-dd")
+        self.income=ORM_Module.Operation(self.dateopertaion,'D',self.incomevalue,self.tagdescription)
         ORM_Module.session.add(self.income)
         ORM_Module.session.commit()
 
@@ -27,6 +33,7 @@ class MyForm(QtGui.QMainWindow):
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
+    Ui_MainWindow()
     myapp = MyForm()
     myapp.show()
     sys.exit(app.exec_())

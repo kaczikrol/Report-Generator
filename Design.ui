@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>406</height>
+    <width>507</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -24,44 +24,74 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>30</y>
+      <y>10</y>
       <width>391</width>
-      <height>191</height>
+      <height>462</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
+     <item row="7" column="0">
       <widget class="QPushButton" name="ExpenseButton">
        <property name="text">
         <string>Add Expense</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
+     <item row="9" column="0">
       <widget class="QPushButton" name="CloseButton">
        <property name="text">
         <string>Close</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QDateEdit" name="dateEdit"/>
-     </item>
-     <item row="5" column="0">
+     <item row="8" column="0">
       <widget class="QPushButton" name="IncomeButton">
        <property name="text">
         <string>Add Income</string>
        </property>
       </widget>
      </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="TagDescriptionLabel">
+       <property name="text">
+        <string>Insert your #tag description</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="0">
-      <widget class="QDateEdit" name="dateEdit_2"/>
+      <widget class="QTextEdit" name="TagEdit"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="ValueLabel">
+       <property name="text">
+        <string>Insert your value</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCalendarWidget" name="CalendarWidget"/>
      </item>
      <item row="1" column="0">
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+      <widget class="QLineEdit" name="ValueEdit"/>
      </item>
      <item row="4" column="0">
-      <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+      <widget class="QLabel" name="CalendarLabel">
+       <property name="text">
+        <string>Choose date of operation</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -71,7 +101,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>507</width>
      <height>21</height>
     </rect>
    </property>

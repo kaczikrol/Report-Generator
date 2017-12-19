@@ -54,21 +54,23 @@ class Operation(Base):
     __tablename__ = 'Operations'
     Id = Column(Integer, primary_key=True)
     User_Id = Column(Integer, ForeignKey('Users.Id'))
-    Date = Column(Date)
+    Date = Column(NVARCHAR(20))
     Type = Column(NVARCHAR(6))
     Value = Column(Float)
+    Description = Column(NVARCHAR(30))
 
 
-    def __init__(self,Date,Type,Value):
+    def __init__(self,Date,Type,Value,Description):
         self.Date = Date
         self.Type = Type.upper()
         if Type=='D':
             self.Value = Value
         else:
             self.Value = -Value
+        self.Description = Description
 
     def __repr__(self):
-        return (self.Date,self.Type,self.Value)
+        return (self.Date,self.Type,self.Value,self.Description)
 
 
-
+Meta.create_all()
