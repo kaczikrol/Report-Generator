@@ -9,20 +9,31 @@ class MyForm(QtGui.QMainWindow):
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.msg=MessageApp.MessageBox()
 
         QtCore.QObject.connect(self.ui.ExpenseButton,QtCore.SIGNAL("clicked()"),self.addExpense)
         QtCore.QObject.connect(self.ui.IncomeButton,QtCore.SIGNAL("clicked()"),self.addIncome)
 
 
-    def addExpense(self):
-        self.expensevalue=float(self.ui.ValueEdit.text())
-        self.tagdescription=str(self.ui.TagEdit.toPlainText())
-        self.dateopertaion=self.ui.CalendarWidget.selectedDate().toString("yyyy-MM-dd")
-        print(self.messageBox().confirmed)
-        self.expense=ORM_Module.Operation(self.dateopertaion,'C',self.expensevalue,self.tagdescription)
-        ORM_Module.session.add(self.expense)
-        ORM_Module.session.commit()
+    def getChoice(self):
+        choice=self.msg.getChoice()
+        self.msg.exec()
+        print(self.msg.getChoice())
+        return self.msg.getChoice()
 
+
+
+    def addExpense(self):
+        self.getChoice()
+        if self.getChoice()==True:
+            self.expensevalue=float(self.ui.ValueEdit.text())
+            self.tagdescription=str(self.ui.TagEdit.toPlainText())
+            self.dateopertaion=self.ui.CalendarWidget.selectedDate().toString("yyyy-MM-dd")
+            self.expense=ORM_Module.Operation(self.dateopertaion,'C',self.expensevalue,self.tagdescription)
+            ORM_Module.session.add(self.expense)
+            ORM_Module.session.commit()
+        else:
+            pass
 
 
     def addIncome(self):
@@ -33,9 +44,6 @@ class MyForm(QtGui.QMainWindow):
         ORM_Module.session.add(self.income)
         ORM_Module.session.commit()
 
-    def messageBox(self):
-        self.msg=MessageApp.MessageBox(self)
-        self.msg.show()
 
 
 
