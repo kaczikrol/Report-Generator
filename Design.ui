@@ -105,8 +105,140 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Users</string>
+    </property>
+    <addaction name="ActionAddUser"/>
+    <addaction name="ActionChangeUser"/>
+    <addaction name="ActionDeleteUser"/>
+    <addaction name="ActionShowUsers"/>
+   </widget>
+   <widget class="QMenu" name="menuAnalysis">
+    <property name="title">
+     <string>Analysis</string>
+    </property>
+    <widget class="QMenu" name="menuStatistics">
+     <property name="title">
+      <string>Statistics</string>
+     </property>
+     <addaction name="ActionAverage"/>
+     <addaction name="ActionMedian"/>
+     <addaction name="ActionModa"/>
+     <addaction name="ActionStDev"/>
+     <addaction name="ActionVariance"/>
+     <addaction name="ActionShowStats"/>
+    </widget>
+    <widget class="QMenu" name="menuCharts">
+     <property name="title">
+      <string>Charts</string>
+     </property>
+     <addaction name="ActionLinePlot"/>
+     <addaction name="ActionBarPlot"/>
+     <addaction name="ActionScatterPlot"/>
+    </widget>
+    <addaction name="menuStatistics"/>
+    <addaction name="menuCharts"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuAnalysis"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="ActionAddUser">
+   <property name="text">
+    <string>Add user</string>
+   </property>
+  </action>
+  <action name="ActionChangeUser">
+   <property name="text">
+    <string>Change user</string>
+   </property>
+  </action>
+  <action name="ActionDeleteUser">
+   <property name="text">
+    <string>Delete user</string>
+   </property>
+  </action>
+  <action name="ActionShowUsers">
+   <property name="text">
+    <string>Show users list</string>
+   </property>
+  </action>
+  <action name="ActionAverage">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Average</string>
+   </property>
+  </action>
+  <action name="ActionMedian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="ActionModa">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Moda</string>
+   </property>
+  </action>
+  <action name="ActionStDev">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Standard Deviation</string>
+   </property>
+  </action>
+  <action name="ActionVariance">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Variance</string>
+   </property>
+  </action>
+  <action name="ActionLinePlot">
+   <property name="text">
+    <string>Line Plot</string>
+   </property>
+  </action>
+  <action name="ActionBarPlot">
+   <property name="text">
+    <string>Bar Plot</string>
+   </property>
+  </action>
+  <action name="ActionScatterPlot">
+   <property name="text">
+    <string>Scatter Plot</string>
+   </property>
+  </action>
+  <action name="ActionShowStats">
+   <property name="text">
+    <string>Show statistics</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>

@@ -20,6 +20,11 @@ class MessageBox(QtGui.QDialog):
     def getChoice(self):
         return self.confirmed
 
+    def setTextMessage(self,*args):
+        message=""
+        for arg in args:
+            message=message+" "+arg
+        self.msg.MessageText.setText(message)
 
 """
 if __name__ == "__main__":
